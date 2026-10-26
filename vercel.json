@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": "site",
+  "redirects": [
+    { "source": "/projects", "destination": "/#projects", "permanent": true },
+    { "source": "/members/professor", "destination": "/people/eusun-han/", "permanent": true },
+    { "source": "/members", "destination": "/#people", "permanent": true },
+    { "source": "/projects/perennialtraits-showcasing-de-novo-domestication-of-perennial-grain-crops-for-profitable-resilient-and-sustainable-agric", "destination": "/projects/perennialtraits/", "permanent": true },
+    { "source": "/projects/rootvision-illuminating-root-diversity-under-crop-mixtures", "destination": "/projects/rootvision/", "permanent": true },
+    { "source": "/projects/exploring-gxexm-interactions-of-perennial-grain-hybrids-for-climate-resilient-agriculture", "destination": "/projects/perennialhybrids/", "permanent": true },
+    { "source": "/projects/rootpheno-building-data-driven-capacity-for-advanced-root-phenotyping", "destination": "/projects/rootpheno/", "permanent": true },
+    { "source": "/projects/deepwater-digital-twinning-perennial-traits-for-resilient-agriculture", "destination": "/projects/deepwater/", "permanent": true },
+    { "source": "/projects/perennialsystems-establishment-of-a-long-term-trial-for-comparison-of-perennial-and-annual-grain-systems", "destination": "/projects/perennialsystems/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    }
+  ]
+}

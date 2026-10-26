@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eusun Han Lab · Root science, plant phenomics & perennial agronomy</title>
+<meta name="description" content="Eusun Han Lab, Department of Agroecology, Aarhus University: how roots drive crop performance and sustainability, from the field to digital phenotyping, and perennial grain crops.">
+<meta name="theme-color" content="#1d1915">
+<link rel="icon" href="assets/img/logo-symbol.png">
+<script>
+  // Old in-page links (#perennialtraits, #eusun-han, …) now point at real pages.
+  (function () {
+    var p = location.hash.slice(1);
+    var projects = ['perennialtraits', 'rootvision', 'perennialhybrids', 'rootpheno', 'deepwater', 'perennialsystems'];
+    if (projects.indexOf(p) > -1) location.replace('projects/' + p + '/');
+    else if (p === 'eusun-han') location.replace('people/eusun-han/');
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/roots.js" defer></script>
+</head>
+<body>
+<div class="lab" data-lab-root>
+<canvas class="roots-canvas" data-roots-canvas aria-hidden="true"></canvas>
+
+<nav class="depth-meter" data-depth-meter aria-label="Sections">
+  <button type="button" class="depth-meter__stop" style="top:0%" data-go="0">Surface</button>
+  <button type="button" class="depth-meter__stop" style="top:12.5%" data-go="1">Research</button>
+  <button type="button" class="depth-meter__stop" style="top:25%" data-go="2">Projects</button>
+  <button type="button" class="depth-meter__stop" style="top:37.5%" data-go="3">Methods</button>
+  <button type="button" class="depth-meter__stop" style="top:50%" data-go="4">People</button>
+  <button type="button" class="depth-meter__stop" style="top:62.5%" data-go="5">Publications</button>
+  <button type="button" class="depth-meter__stop" style="top:75%" data-go="6">News</button>
+  <button type="button" class="depth-meter__stop" style="top:87.5%" data-go="7">Join us</button>
+  <button type="button" class="depth-meter__stop" style="top:100%" data-go="8">Contact</button>
+  <span class="depth-meter__dot" data-depth-dot></span>
+</nav>
+
+<header class="hero" data-layer="0" id="top">
+  <div class="hero__top">
+    <img class="hero__logo" src="assets/img/logo.png" alt="Eusun Han Lab" width="174" height="44">
+    <span class="hero__dept">Department of Agroecology · Aarhus University</span>
+  </div>
+  <div class="hero__main">
+    <div class="hero__kicker">Root science · Plant phenomics · Perennial agronomy</div>
+    <h1 class="hero__title">Eusun Han<br><em>Lab</em></h1>
+    <p class="hero__intro">Hello! We're a team with diverse expertise, studying how roots drive crop performance and sustainability, from the field to digital phenotyping. We're also developing perennial grain crops and sustainable cropping systems. Site visits, long-term research stays and questions are all welcome. Say hello at <a href="mailto:eusun.han@agro.au.dk">eusun.han@agro.au.dk</a>.</p>
+    <div class="hero__picker">
+      <span class="hero__picker-label" id="crop-label">Root system shown</span>
+      <div class="hero__picker-row" role="group" aria-labelledby="crop-label">
+        <button type="button" class="pill crop-btn" data-crop="grass" aria-pressed="true">Intermediate wheatgrass · fibrous</button>
+        <button type="button" class="pill crop-btn" data-crop="silphium" aria-pressed="false">Silphium · taproot</button>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll">Scroll down into the soil</div>
+</header>
+
+<main class="soil">
+
+<section class="layer" data-layer="1" id="research" aria-labelledby="research-title">
+  <div class="layer__label">01 · Research</div>
+  <div class="panel" style="--panel-gap:28px">
+    <h2 class="panel__title" id="research-title">Research</h2>
+    <div class="theme">
+      <span class="theme__num">01</span>
+      <strong class="theme__title">Root Science</strong>
+      <div class="theme__body">
+        <p class="theme__summary">Roots drive how crops perform, yet we know surprisingly little about them, so we ask how root structure, chemistry and function shape crop production underneath.</p>
+        <p>Roots are hard to see, so we build the tools to see them: field coring, minirhizotrons, microCT, spectroscopy and automated image analysis. We study roots in intact soil and real fields, and link what they look like, what they are made of and what they do to water and nutrient uptake, drought resilience and carbon storage. See&nbsp;Projects (e.g. <a href="projects/rootvision/">RootVision</a>). We also teach these methods to other researchers in our biennial RootMethods PhD course. Check our publication linking root structural and functional capacity under field conditions by Eusun&nbsp;<a href="https://nph.onlinelibrary.wiley.com/doi/10.1111/nph.71065" target="_blank" rel="noopener">(Han et al., 2026)</a>.</p>
+      </div>
+    </div>
+    <div class="theme">
+      <span class="theme__num">02</span>
+      <strong class="theme__title">Plant Phenomics</strong>
+      <div class="theme__body">
+        <p class="theme__summary">We measure plants at scale so that hidden traits can be used in research and breeding - Imaging, sensors and machine learning turn field and lab data into traits we can understand, predict and select for.</p>
+        <p>We combine RGB, multispectral and hyperspectral imaging, UAVs, 3D imaging and machine learning to track plants above and below ground. One question drives us: can early, non-destructive measurements predict how a plant splits its energy between grain and roots? Follow it in&nbsp;Projects (e.g. <a href="projects/perennialtraits/">PerennialTraits</a>, <a href="projects/rootpheno/">RootPheno</a>). Check in Publications on a novel root mixture analysis exploiting spectroscopy by our Postdoc Marco&nbsp;<a href="https://www.sciencedirect.com/science/article/pii/S1360138525001967" target="_blank" rel="noopener">(Lombardi et al., 2025)</a>.</p>
+      </div>
+    </div>
+    <div class="theme">
+      <span class="theme__num">03</span>
+      <strong class="theme__title">Perennial Agronomy</strong>
+      <div class="theme__body">
+        <p class="theme__summary">We work on perennial grain crops and cropping systems that yield grain year after year while keeping living roots in the soil, with benefits for soil, water, carbon and farm resilience.</p>
+        <p>What if the field never had to be replanted? We study perennial grains, especially intermediate wheatgrass, in long-term field trials: how they establish, root, overwinter and yield, and what they do for soil, water and nitrogen. See&nbsp;Projects (e.g. <a href="projects/perennialsystems/">PerennialSystems</a>, <a href="projects/deepwater/">DeepWater</a>, <a href="projects/perennialtraits/">PerennialTraits</a>)&nbsp;and our Publications on process-based modelling by our Postdoc Yulin&nbsp;<a href="https://www.sciencedirect.com/science/article/pii/S1161030126003692" target="_blank" rel="noopener">(Zhang et al., 2026)</a>&nbsp;and ecosystem services by our PhD student Alexa&nbsp;<a href="https://www.sciencedirect.com/science/article/pii/S0167880926005256" target="_blank" rel="noopener">(Peterson et al., 2026)</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="layer" data-layer="2" id="projects" aria-labelledby="projects-title">
+  <div class="layer__label">02 · Projects</div>
+  <div class="panel" style="--panel-gap:36px">
+    <h2 class="panel__title" id="projects-title">Projects &amp; field sites</h2>
+    <span class="mono-label">5 perennial grain species · 4 years · 3 field trials</span>
+    <div class="chips">
+      <span class="chip">Intermediate wheatgrass</span>
+      <span class="chip">Sainfoin</span>
+      <span class="chip">Silphium</span>
+      <span class="chip">Perennial cereal rye</span>
+      <span class="chip">Perennial wheat</span>
+    </div>
+    <div class="project-list">
+      <a class="project-link" href="projects/perennialtraits/">
+        <div class="project-link__head"><h3 class="project-link__name">PerennialTraits</h3><span class="project-link__num">01</span></div>
+        <span class="project-link__sub">Showcasing de novo domestication of perennial grain crops for profitable, resilient and sustainable agriculture</span>
+        <p class="project-link__text">We are developing novel perennial crops that produce grain for people year after year, without re-sowing. Their deep root systems make farming more sustainable and more resilient to climate change.</p>
+        <span class="project-link__cta">Project page →</span>
+      </a>
+      <a class="project-link" href="projects/rootvision/">
+        <div class="project-link__head"><h3 class="project-link__name">RootVision</h3><span class="project-link__num">02</span></div>
+        <span class="project-link__sub">Illuminating root diversity under crop mixtures</span>
+        <p class="project-link__text">The RootVision project seeks to overcome these limitations by developing a new root phenotyping tool that can differentiate between species in crop mixtures using advanced spectroscopy and high detection of multiple root traits.</p>
+        <span class="project-link__cta">Project page →</span>
+      </a>
+      <a class="project-link" href="projects/perennialhybrids/">
+        <div class="project-link__head"><h3 class="project-link__name">PerennialHybrids</h3><span class="project-link__num">03</span></div>
+        <span class="project-link__sub">Exploring GxExM interactions of perennial grain hybrids for climate resilient agriculture</span>
+        <p class="project-link__text">In this project we are comparing genotypes of perennial grain hybrids (e.g. perennial wheat) for their perenniality (e.g. regeneration) using metabolomics and plant phenotyping.</p>
+        <span class="project-link__cta">Project page →</span>
+      </a>
+      <a class="project-link" href="projects/rootpheno/">
+        <div class="project-link__head"><h3 class="project-link__name">RootPheno</h3><span class="project-link__num">04</span></div>
+        <span class="project-link__sub">Building data-driven capacity for advanced root phenotyping</span>
+        <p class="project-link__text">We propose developing advanced root phenotyping capacity by creating two data-driven pipelines that can be used by non-data specialists, such as crop and soil researchers.</p>
+        <span class="project-link__cta">Project page →</span>
+      </a>
+      <a class="project-link" href="projects/deepwater/">
+        <div class="project-link__head"><h3 class="project-link__name">DeepWater</h3><span class="project-link__num">05</span></div>
+        <span class="project-link__sub">Digital twinning perennial traits for resilient agriculture</span>
+        <p class="project-link__text">This project investigates how deep-root traits in perennial grain crops enhance water-use efficiency and resilience under variable climates.</p>
+        <span class="project-link__cta">Project page →</span>
+      </a>
+      <a class="project-link" href="projects/perennialsystems/">
+        <div class="project-link__head"><h3 class="project-link__name">PerennialSystems</h3><span class="project-link__num">06</span></div>
+        <span class="project-link__sub">Establishment of a long-term trial for comparison of perennial and annual grain systems</span>
+        <p class="project-link__text">This project aims to advance our understanding of agronomic practices for perennial grain crops and their potential multipurpose applications in comparison to annual cropping systems.</p>
+        <span class="project-link__cta">Project page →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="layer" data-layer="3" id="methods" aria-labelledby="methods-title">
+  <div class="layer__label">03 · Methods</div>
+  <div class="panel" style="--panel-gap:26px">
+    <h2 class="panel__title" id="methods-title">Methods &amp; tools</h2>
+    <a class="manual-link" href="https://zenodo.org/records/20542454" target="_blank" rel="noopener">Our evolving root methods manual →</a>
+    <div class="block block--loose">
+      <strong class="block__title">Root image segmentation</strong>
+      <span class="block__text">Deep-learning segmentation (RootPainter) turns root images into measurable traits.</span>
+      <div class="seg-row">
+        <button type="button" class="pill seg-btn" data-seg-toggle aria-pressed="false">Show segmentation view</button>
+        <div class="seg-legend" data-seg-legend hidden>
+          <span><i style="background:#f0b44c"></i>primary</span>
+          <span><i style="background:#4fd0c0"></i>1st-order lateral</span>
+          <span><i style="background:#e77bb4"></i>2nd-order lateral</span>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <strong class="block__title">Isotope labelling</strong>
+      <span class="block__text">Tracers placed in deep soil layers show which crops take up nutrients from where.</span>
+    </div>
+    <div class="block">
+      <strong class="block__title">Phenotyping</strong>
+      <span class="block__text">3D plant phenotyping system, drones, hyperspectral and micro-CT imaging, LiCOR photosynthesis measurements.</span>
+    </div>
+    <div class="block block--loose">
+      <strong class="block__title">Facilities</strong>
+      <span class="block__text" style="font-size:14px;margin-top:12px">Semi-field facility, greenhouse and growth chambers.</span>
+    </div>
+    <figure class="toolkit">
+      <img src="assets/img/methods/toolkit.jpg" alt="Lab methods: CT scanning, 3D root construction, soil sensing, soil sampling, root imaging, root processing, AI-based image segmentation, isotope labelling, lysimeter sampling" width="1280" height="980" loading="lazy">
+      <figcaption>Our toolkit, from soil sampling to AI segmentation</figcaption>
+    </figure>
+    <div class="method-photos">
+      <figure><img src="assets/img/methods/root-cross-section.jpg" alt="Stained root cross-section under the microscope" style="object-position:50% 55%" loading="lazy"><figcaption>Root cross-section, bright-field microscopy</figcaption></figure>
+      <figure><img src="assets/img/methods/seed-microct.jpg" alt="Segmented seeds in micro-CT image analysis" style="object-position:50% 70%" loading="lazy"><figcaption>Seed micro-CT image analysis</figcaption></figure>
+      <figure><img src="assets/img/methods/3d-phenotyping.jpg" alt="3D scan of a potted seedling" style="object-position:50% 47%" loading="lazy"><figcaption>3D plant phenotyping</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="layer" data-layer="4" id="people" aria-labelledby="people-title">
+  <div class="layer__label">04 · People</div>
+  <div class="panel panel--wide" style="--panel-gap:30px">
+    <h2 class="panel__title" id="people-title">People</h2>
+    <div class="pi">
+      <img class="pi__photo" src="assets/img/people/eusun-han.jpg" alt="Eusun Han">
+      <div class="pi__info">
+        <span class="pi__role">Principal investigator</span>
+        <strong class="pi__name">Eusun Han</strong>
+        <span class="pi__title">Associate Professor of Perennial Cropping Systems</span>
+        <p class="pi__bio">My research focuses on root systems as drivers of crop performance and sustainability, integrating agronomy, root biology, and digital phenotyping. Over the past decade, I have developed experimental, analytical, and conceptual approaches that make root structure, function, and dynamics measurable under realistic field conditions. Since joining Aarhus University, I have extended this expertise to establish perennial grain crops as a new, independent research direction.</p>
+        <a class="link-mail" href="mailto:eusun.han@agro.au.dk">eusun.han@agro.au.dk</a>
+        <a class="link-caps" href="people/eusun-han/">Full profile →</a>
+      </div>
+    </div>
+    <div class="team">
+      <div class="member"><img class="member__photo" src="assets/img/people/marco-lombardi.jpg" alt="Marco Lombardi" style="object-position:50% 10%" loading="lazy"><strong class="member__name">Marco Lombardi</strong><span class="member__role">Postdoc · RootVision</span><span class="member__focus">Root diversity in crop mixtures, molecular root studies</span><a class="link-mail" href="mailto:marco.lombardi@agro.au.dk">Email</a></div>
+      <div class="member"><img class="member__photo" src="assets/img/people/shoujiao-li.jpg" alt="Shoujiao Li" style="object-position:50% 30%" loading="lazy"><strong class="member__name">Shoujiao Li</strong><span class="member__role">Postdoc · PerennialTraits</span><span class="member__focus">Soil organic carbon, microbial biomass, PLFA analysis</span><a class="link-mail" href="mailto:shoujiao.li@agro.au.dk">Email</a></div>
+      <div class="member"><img class="member__photo" src="assets/img/people/michele-canciani.jpg" alt="Michele Canciani" loading="lazy"><strong class="member__name">Michele Canciani</strong><span class="member__role">Postdoc · GrassConnect</span><span class="member__focus">Drone and hyperspectral imaging, grassland mixtures</span></div>
+      <div class="member"><img class="member__photo" src="assets/img/people/yulin-zhang.jpg" alt="Yulin Zhang" style="object-position:50% 13%" loading="lazy"><strong class="member__name">Yulin Zhang</strong><span class="member__role">Postdoc · DeepWater</span><span class="member__focus">Soil water and nitrate leaching modelling</span><a class="link-mail" href="mailto:yulin.zhang@agro.au.dk">Email</a></div>
+      <div class="member"><img class="member__photo" src="assets/img/people/alexa-peterson.jpg" alt="Alexa Peterson" style="object-position:50% 18%" loading="lazy"><strong class="member__name">Alexa Peterson</strong><span class="member__role">PhD · PerennialSystems</span><span class="member__focus">Management impacts on roots, isotope labelling</span><a class="link-mail" href="mailto:alexa.peterson@agro.au.dk">Email</a></div>
+      <div class="member"><img class="member__photo" src="assets/img/people/yuma-ikeda.jpg" alt="Yuma Ikeda" loading="lazy"><strong class="member__name">Yuma Ikeda</strong><span class="member__role">PhD · PerennialTraits</span><span class="member__focus">Plant phenotyping with AI, 3D and micro-CT imaging</span><a class="link-mail" href="mailto:yuik@agro.au.dk">Email</a></div>
+      <div class="member"><img class="member__photo" src="assets/img/people/sehyeong-jo.jpg" alt="Sehyeong Jo" loading="lazy"><strong class="member__name">Sehyeong Jo</strong><span class="member__role">PhD · Data Driven Capacity for AGRO</span><span class="member__focus">Software, root image segmentation</span><a class="link-mail" href="mailto:sehyeong.jo@agro.au.dk">Email</a></div>
+      <div class="member"><img class="member__photo" src="assets/img/people/garam-han.jpg" alt="Garam Han" loading="lazy"><strong class="member__name">Garam Han</strong><span class="member__role">PhD · Variance</span><span class="member__focus">N leaching mapping, simulation modelling</span><a class="link-mail" href="mailto:garam.han@agro.au.dk">Email</a></div>
+      <div class="member"><img class="member__photo" src="assets/img/people/christopher-steiness.jpg" alt="Christopher Steiness" style="object-position:50% 16%" loading="lazy"><strong class="member__name">Christopher Steiness</strong><span class="member__role">PhD · PerennialWheat</span><span class="member__focus">Metabolomics, photosynthesis, stomatal imaging</span><a class="link-mail" href="mailto:au806095@agro.au.dk">Email</a></div>
+      <div class="member"><img class="member__photo" src="assets/img/people/casandra-sabou.jpg" alt="Casandra Sabou" loading="lazy"><strong class="member__name">Casandra Sabou</strong><span class="member__role">Field Technician</span><span class="member__focus">Field trials and sites</span><a class="link-mail" href="mailto:casa@agro.au.dk">Email</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="layer" data-layer="5" id="publications" aria-labelledby="publications-title">
+  <div class="layer__label">05 · Publications</div>
+  <div class="panel">
+    <h2 class="panel__title panel__title--tight" id="publications-title">Selected publications</h2>
+    <div class="entry"><span class="entry__date">2026</span><div class="entry__body"><a class="entry__title" href="https://www.sciencedirect.com/science/article/pii/S0167880926005256" target="_blank" rel="noopener">Ecosystem services of perennial grain crops</a><span class="entry__meta">Peterson A, et al. · <em>Agriculture, Ecosystems &amp; Environment</em></span></div></div>
+    <div class="entry"><span class="entry__date">2026</span><div class="entry__body"><a class="entry__title" href="https://www.sciencedirect.com/science/article/pii/S1161030126003692" target="_blank" rel="noopener">Requirements and challenges of process-based modeling for intermediate wheatgrass, a perennial cereal</a><span class="entry__meta">Zhang Y, et al. · <em>European Journal of Agronomy</em></span></div></div>
+    <div class="entry"><span class="entry__date">2026</span><div class="entry__body"><span class="entry__title">Deep roots through time and crops: insight from five seasons at DeepRootLab</span><span class="entry__meta">Han E, Clément C, Czaban W, Smith AG, Dresbøll DB, Thorup-Kristensen K · <em>New Phytologist</em> 250(4): 2670–2688</span></div></div>
+    <div class="entry"><span class="entry__date">2026</span><div class="entry__body"><span class="entry__title">Root development and water availability in dual-purpose wheat</span><span class="entry__meta">Han E, Whish J, Li X, Swan T, Lilley J, Thorup-Kristensen K, Kirkegaard JA · <em>Field Crops Research</em> 342: 110444</span></div></div>
+    <div class="entry"><span class="entry__date">2024</span><div class="entry__body"><span class="entry__title">Temporary growth cessation of wheat roots following defoliation</span><span class="entry__meta">Han E, Kirkegaard JA, Thorup-Kristensen K · <em>Plant and Soil</em> 502: 315–331</span></div></div>
+    <div class="panel-links">
+      <a href="https://scholar.google.com/citations?user=scGk7XkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar →</a>
+    </div>
+  </div>
+</section>
+
+<section class="layer layer--short" data-layer="6" id="news" aria-labelledby="news-title">
+  <div class="layer__label">06 · News</div>
+  <div class="panel">
+    <h2 class="panel__title panel__title--tight" id="news-title">News</h2>
+    <div class="entry entry--news"><span class="entry__date">Sep 2026</span><div class="entry__body"><span class="entry__text"><strong>Yulin Zhang's</strong> review paper has been published! - Requirements and challenges of process-based modeling for intermediate wheatgrass, a perennial cereal</span><a class="entry__more" href="https://www.sciencedirect.com/science/article/pii/S1161030126003692" target="_blank" rel="noopener">Learn more →</a></div></div>
+    <div class="entry entry--news"><span class="entry__date">Sep 2026</span><div class="entry__body"><span class="entry__text"><strong>Alexa Peterson's</strong> 1st paper from her PhD work was published!: Ecosystem services of perennial grain crops</span><a class="entry__more" href="https://www.sciencedirect.com/science/article/pii/S0167880926005256" target="_blank" rel="noopener">Learn more →</a></div></div>
+    <div class="entry entry--news"><span class="entry__date">Sep 2026</span><span class="entry__text">Our lab website is now open!</span></div>
+  </div>
+</section>
+
+<section class="layer layer--short" data-layer="7" id="join" aria-labelledby="join-title">
+  <div class="layer__label">07 · Join us</div>
+  <div class="panel" style="--panel-gap:22px">
+    <h2 class="panel__title" id="join-title">Join us</h2>
+    <p class="join__lede">Come join us next summer! Hosting students to help with activities on a range of topics!</p>
+    <p class="join__text">Site visits, long-term research stays and questions are all welcome.</p>
+    <a class="btn-gold" href="mailto:eusun.han@agro.au.dk">Say hello at eusun.han@agro.au.dk</a>
+    <div class="course">
+      <strong>Root Methods PhD course (Coming 2028)</strong>
+      <span>A PhD course on root research methods, taught by the lab and colleagues.</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" data-layer="8" id="contact" aria-label="Contact">
+  <div class="layer__label">08 · Contact</div>
+  <div class="contact__grid">
+    <div class="contact__brand">
+      <img src="assets/img/logo-symbol.png" alt="">
+      <strong>Eusun Han Lab</strong>
+      <span>Department of Agroecology, Aarhus University</span>
+    </div>
+    <div class="contact__col"><span class="mono-label">Email</span><a class="contact__email" href="mailto:eusun.han@agro.au.dk">eusun.han@agro.au.dk</a></div>
+    <div class="contact__col"><span class="mono-label">Address</span><span class="contact__address">Blichers Allé 20, 8830, Tjele, Denmark</span></div>
+    <button type="button" class="pill back-top" data-go="0">↑ Back to the surface</button>
+  </div>
+</section>
+
+</main>
+</div>
+</body>
+</html>
